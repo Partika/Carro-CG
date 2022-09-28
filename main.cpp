@@ -619,6 +619,26 @@ void display()
 
 	glPopMatrix(); // fim do ceu nublado
 
+	glPushMatrix(); // comeco boneco
+
+	glTranslatef(20, 5, 0);
+	glColor3d(0.7, 0.7, 0);
+	glScalef(1, 0.8, 0.8);
+	glutSolidSphere(6, 50, 50);
+	glColor3d(1, 1, 0);
+	glScalef(0.8, (1/0.8), (1/0.8));
+	glTranslatef(2.5, 0, 0);
+	glRotatef(-90, 1, 0, 0);
+	glutSolidCylinder(5, 10, 50, 50);
+	glRotatef(90, 1, 0, 0);
+	glutSolidSphere(5, 50, 50);
+	glTranslatef(0, 10, 0);
+	glScalef(1, 0.8, 1);
+	glutSolidSphere(5, 50, 50);
+
+
+	glPopMatrix(); // fim boneco
+
 	glutSwapBuffers();
 }
 
