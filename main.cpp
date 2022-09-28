@@ -622,10 +622,10 @@ void display()
 	glPushMatrix(); // comeco boneco
 
 	glTranslatef(20, 5, 0);
-	glColor3d(0.7, 0.7, 0);
+	glColor3d(0.7, 0.7, 0);// comeco maxilar
 	glScalef(1, 0.8, 0.8);
-	glutSolidSphere(6, 50, 50);
-	glColor3d(1, 1, 0);
+	glutSolidSphere(6, 50, 50);// fim maxilar
+	glColor3d(1, 1, 0);//comeco resto cabeca
 	glScalef(0.8, (1/0.8), (1/0.8));
 	glTranslatef(2.5, 0, 0);
 	glRotatef(-90, 1, 0, 0);
@@ -634,7 +634,16 @@ void display()
 	glutSolidSphere(5, 50, 50);
 	glTranslatef(0, 10, 0);
 	glScalef(1, 0.8, 1);
-	glutSolidSphere(5, 50, 50);
+	glutSolidSphere(5, 50, 50);//fim resto cabeca
+	glScalef(1, (1/0.8), 1);
+	glColor3d(1, 1, 1);
+	glTranslatef(-5, -3, -1);//comeco olhos
+	glScalef(0.2, 1, 0.7);
+	glutSolidSphere(2, 50, 50);
+	glScalef((1/0.2), 1, (1/0.7));
+	glTranslatef(0, 0, 4);
+	glScalef(0.2, 1, 0.7);
+	glutSolidSphere(2, 50, 50);
 
 
 	glPopMatrix(); // fim boneco
