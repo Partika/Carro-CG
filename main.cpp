@@ -281,7 +281,10 @@ void display()
 {
 	const double a = glutGet(GLUT_ELAPSED_TIME) / 10;
 	GLfloat yellow[4] = {1, 1, 0, 1};
-
+	GLfloat opacoAmbient[] = { 0.2, 0.2, 0.2, 1.0 };
+    GLfloat opacoDiffuse[] = { 0.6, 0.6, 0.6, 1.0 };
+	GLfloat whiteSpecular[] = { 0.3, 0.3, 0.3, 1.0 };
+	GLint brilho = 10;
 	/* Limpa todos os pixels da tela */
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	DefineIluminacao();
@@ -619,7 +622,13 @@ void display()
 
 	glPopMatrix(); // fim do ceu nublado
 
+
 	glPushMatrix(); // comeco boneco
+
+	glMaterialfv( GL_FRONT, GL_AMBIENT, opacoAmbient );
+	glMaterialfv( GL_FRONT, GL_DIFFUSE, opacoDiffuse );
+	glMaterialfv( GL_FRONT, GL_SPECULAR, whiteSpecular );
+	glMaterialf( GL_FRONT, GL_SHININESS, 20 );
 
 	glTranslatef(20, 5, 0);
 	glColor3d(0.7, 0.7, 0);// comeco maxilar
@@ -640,11 +649,24 @@ void display()
 	glTranslatef(-5, -3, -1);//comeco olhos
 	glScalef(0.2, 1, 0.7);
 	glutSolidSphere(2, 50, 50);
+	glColor3d(0, 0, 0);
+	glTranslatef(-3, 0, 0);
+	glutSolidSphere(1, 50, 50);
+	glColor3d(1, 1, 1);
 	glScalef((1/0.2), 1, (1/0.7));
-	glTranslatef(0, 0, 4);
+	glTranslatef(0.6, 0, 4);
 	glScalef(0.2, 1, 0.7);
 	glutSolidSphere(2, 50, 50);
-
+	glColor3d(0, 0, 0);
+	glTranslatef(-3, 0, 0);
+	glutSolidSphere(1, 50, 50);// fim dos olhos
+	glScalef((1/0.2), 1, (1/0.7));
+	glColor3d(0, 0, 0);// comeco pernas
+	glTranslatef(5, -10, -1);
+	glRotatef(90, 1, 0, 0);
+	glutSolidCylinder(1, 20, 100, 100);
+	glTranslatef(0,-5,0);
+	glutSolidCylinder(1, 20, 100, 100);// fim pernas
 
 	glPopMatrix(); // fim boneco
 
