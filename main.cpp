@@ -281,7 +281,10 @@ void display()
 {
 	const double a = glutGet(GLUT_ELAPSED_TIME) / 10;
 	GLfloat yellow[4] = {1, 1, 0, 1};
-
+	GLfloat opacoAmbient[] = { 0.2, 0.2, 0.2, 1.0 };
+    GLfloat opacoDiffuse[] = { 0.6, 0.6, 0.6, 1.0 };
+	GLfloat whiteSpecular[] = { 0.3, 0.3, 0.3, 1.0 };
+	GLint brilho = 10;
 	/* Limpa todos os pixels da tela */
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	DefineIluminacao();
@@ -395,148 +398,148 @@ void display()
 	glTranslatef(-40, 0, 0);
 	glPushMatrix(); //comeco de prototipo de nuvem
 	glPushMatrix(); // comeco andar 1
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 		glPushMatrix(); // comeco camada 2
 			glTranslatef(5, 0, 5);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glPushMatrix(); // comeco camada 3
 				glTranslatef(15, 0, 5);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 
 				glTranslatef(20, 0, 5);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 
 				glTranslatef(20, 0, 5);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 
 			glPopMatrix(); // fim camada 3
 			glTranslatef(10, 0, 20);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 		glPopMatrix(); // fim camada 2
 		glTranslatef(0, 0, 30);
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 	glPopMatrix(); // fim andar 1
 	glTranslatef(0, 5, 5);
 	glPushMatrix(); // comeco andar 2
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 		glPushMatrix(); // comeco camada 2
 			glTranslatef(5, 0, 5);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 
 			glTranslatef(10, 0, 5);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 
 			glTranslatef(10, 0, 5);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 		glPopMatrix(); // fim camada 2
 		glTranslatef(0, 0, 20);
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 	glPopMatrix(); // fim andar 2
 	glTranslatef(0, 5, 5);
 	glPushMatrix(); // comeco andar 3
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 
 		glTranslatef(0, 0, 5);
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 
 		glTranslatef(0, 0, 5);
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 	glPopMatrix(); // fim andar 3
 	glPopMatrix(); // fim prototipo nuvem
 
 	glTranslatef(80, 0, -100);
 	glPushMatrix(); //comeco de nuvem clone 1
 	glPushMatrix(); // comeco andar 1
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 		glPushMatrix(); // comeco camada 2
 			glTranslatef(5, 0, 5);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glPushMatrix(); // comeco camada 3
 				glTranslatef(15, 0, 5);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 
 				glTranslatef(20, 0, 5);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 
 				glTranslatef(20, 0, 5);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 
 			glPopMatrix(); // fim camada 3
 			glTranslatef(10, 0, 20);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 		glPopMatrix(); // fim camada 2
 		glTranslatef(0, 0, 30);
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 	glPopMatrix(); // fim andar 1
 	glTranslatef(0, 5, 5);
 	glPushMatrix(); // comeco andar 2
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 		glPushMatrix(); // comeco camada 2
 			glTranslatef(5, 0, 5);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 
 			glTranslatef(10, 0, 5);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 
 			glTranslatef(10, 0, 5);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 		glPopMatrix(); // fim camada 2
 		glTranslatef(0, 0, 20);
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 	glPopMatrix(); // fim andar 2
 	glTranslatef(0, 5, 5);
 	glPushMatrix(); // comeco andar 3
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 
 		glTranslatef(0, 0, 5);
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 
 		glTranslatef(0, 0, 5);
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 	glPopMatrix(); // fim andar 3
 	glPopMatrix(); // fim nuvem clone 1
 
@@ -544,80 +547,128 @@ void display()
 	glTranslatef(-150, 0, 150);
 	glPushMatrix(); //comeco de nuvem clone 1
 	glPushMatrix(); // comeco andar 1
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 		glPushMatrix(); // comeco camada 2
 			glTranslatef(5, 0, 5);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glPushMatrix(); // comeco camada 3
 				glTranslatef(15, 0, 5);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 
 				glTranslatef(20, 0, 5);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 
 				glTranslatef(20, 0, 5);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 				glTranslatef(-10, 0, 0);
-				glutSolidSphere(10, 200, 200);
+				glutSolidSphere(10, 100, 100);
 
 			glPopMatrix(); // fim camada 3
 			glTranslatef(10, 0, 20);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 		glPopMatrix(); // fim camada 2
 		glTranslatef(0, 0, 30);
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 	glPopMatrix(); // fim andar 1
 	glTranslatef(0, 5, 5);
 	glPushMatrix(); // comeco andar 2
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 		glPushMatrix(); // comeco camada 2
 			glTranslatef(5, 0, 5);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 
 			glTranslatef(10, 0, 5);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 
 			glTranslatef(10, 0, 5);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 			glTranslatef(-10, 0, 0);
-			glutSolidSphere(10, 200, 200);
+			glutSolidSphere(10, 100, 100);
 		glPopMatrix(); // fim camada 2
 		glTranslatef(0, 0, 20);
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 	glPopMatrix(); // fim andar 2
 	glTranslatef(0, 5, 5);
 	glPushMatrix(); // comeco andar 3
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 
 		glTranslatef(0, 0, 5);
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 
 		glTranslatef(0, 0, 5);
-		glutSolidSphere(10, 200, 200);
+		glutSolidSphere(10, 100, 100);
 	glPopMatrix(); // fim andar 3
 	glPopMatrix(); // fim nuvem clone 1
 
 
 
 	glPopMatrix(); // fim do ceu nublado
+
+
+	glPushMatrix(); // comeco boneco
+
+	glMaterialfv( GL_FRONT, GL_AMBIENT, opacoAmbient );
+	glMaterialfv( GL_FRONT, GL_DIFFUSE, opacoDiffuse );
+	glMaterialfv( GL_FRONT, GL_SPECULAR, whiteSpecular );
+	glMaterialf( GL_FRONT, GL_SHININESS, 20 );
+
+	glTranslatef(20, 5, 0);
+	glColor3d(0.7, 0.7, 0);// comeco maxilar
+	glScalef(1, 0.8, 0.8);
+	glutSolidSphere(6, 50, 50);// fim maxilar
+	glColor3d(1, 1, 0);//comeco resto cabeca
+	glScalef(0.8, (1/0.8), (1/0.8));
+	glTranslatef(2.5, 0, 0);
+	glRotatef(-90, 1, 0, 0);
+	glutSolidCylinder(5, 10, 50, 50);
+	glRotatef(90, 1, 0, 0);
+	glutSolidSphere(5, 50, 50);
+	glTranslatef(0, 10, 0);
+	glScalef(1, 0.8, 1);
+	glutSolidSphere(5, 50, 50);//fim resto cabeca
+	glScalef(1, (1/0.8), 1);
+	glColor3d(1, 1, 1);
+	glTranslatef(-5, -3, -1);//comeco olhos
+	glScalef(0.2, 1, 0.7);
+	glutSolidSphere(2, 50, 50);
+	glColor3d(0, 0, 0);
+	glTranslatef(-3, 0, 0);
+	glutSolidSphere(1, 50, 50);
+	glColor3d(1, 1, 1);
+	glScalef((1/0.2), 1, (1/0.7));
+	glTranslatef(0.6, 0, 4);
+	glScalef(0.2, 1, 0.7);
+	glutSolidSphere(2, 50, 50);
+	glColor3d(0, 0, 0);
+	glTranslatef(-3, 0, 0);
+	glutSolidSphere(1, 50, 50);// fim dos olhos
+	glScalef((1/0.2), 1, (1/0.7));
+	glColor3d(0, 0, 0);// comeco pernas
+	glTranslatef(5, -10, -1);
+	glRotatef(90, 1, 0, 0);
+	glutSolidCylinder(1, 20, 100, 100);
+	glTranslatef(0,-5,0);
+	glutSolidCylinder(1, 20, 100, 100);// fim pernas
+
+	glPopMatrix(); // fim boneco
 
 	glutSwapBuffers();
 }
